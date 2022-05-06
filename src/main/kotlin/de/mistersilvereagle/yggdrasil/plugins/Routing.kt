@@ -11,10 +11,27 @@ import javax.naming.AuthenticationException
 
 fun Application.configureRouting() {
     routing {
-        customerRouting()
-        get("/") {
-            call.respondText("Hello, world!")
+        val paths = arrayOf<String>(
+            "/",
+            "/session",
+            "/account",
+            "/auth",
+            "/skins",
+            "/authserver",
+            "/sessionserver",
+            "/api",
+            "textures"
+        //see https://minecraft-api.com/mojang/
+        )
+        for (path in paths) {
+            get(path) {
+                call.respondText("Hello, world: "+path)
+            }
         }
+        customerRouting()
+        /*get("/") {
+            call.respondText("Hello, world!")
+        }*/
         get("/internal-error") {
             throw Exception("Internal Server Error")
         }
