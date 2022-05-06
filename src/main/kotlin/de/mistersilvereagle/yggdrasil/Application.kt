@@ -11,4 +11,5 @@ fun Application.module() {
     configurePlugins()
     configureRouting()
     configureSerialization()
+    configureTemplating()
 }
