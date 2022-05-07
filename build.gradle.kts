@@ -36,4 +36,5 @@ dependencies {
     implementation("io.ktor:ktor-server-hsts:$ktor_version")
     implementation("io.ktor:ktor-server-freemarker:$ktor_version")
     implementation("io.ktor:ktor-server-status-pages:$ktor_version")
+    implementation("de.mkammerer:argon2-jvm:2.11")
 }
